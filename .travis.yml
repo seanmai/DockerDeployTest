@@ -3,8 +3,8 @@ services:
     - docker
 
 before_install:
-    # - docker build -t seanmai/docker-deploy-test -f Dockerfile.dev .
-    - docker build -t seanmai/docker-deploy-test .
+    - docker build -t seanmai/docker-deploy-test -f Dockerfile.dev .
+    # - docker build -t seanmai/docker-deploy-test .
 
 script:
     - docker run seanmai/docker-deploy-test npm run test -- --coverage
