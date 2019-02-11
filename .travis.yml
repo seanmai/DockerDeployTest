@@ -6,4 +6,4 @@ before_install:
     - docker build -t seanmai/docker-deploy-test -f Dockerfile.dev .
 
 script:
-    - docker run seanmai/docker-deploy-test run test -- --coverage
+    - docker run seanmai/docker-deploy-test npm run test -- --coverage
