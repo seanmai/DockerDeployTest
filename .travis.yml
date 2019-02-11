@@ -7,3 +7,13 @@ before_install:
 
 script:
     - docker run seanmai/docker-deploy-test npm run test -- --coverage
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-test"
+    env: "DockerTest-env"
+    bucket_name: "elasticbeanstalk-us-east-2-515282096087"
+    bucket_path: "docker-test"
+    on:
+        branch: master       # Only deploy on push to master
